@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   backend:
+    # image: ghcr.io/thanaiquynh/hex-to-rgb-converter-backend:latest
     build:
       context: ./BE
       dockerfile: Dockerfile
@@ -10,3 +11,15 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./FE
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+    depends_on:
+      - backend
