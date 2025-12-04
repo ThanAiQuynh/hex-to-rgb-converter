@@ -3,9 +3,6 @@ version: '3.8'
 services:
   backend:
     image: ghcr.io/thanaiquynh/hex-to-rgb-converter-backend:latest
-    build:
-      context: ./BE
-      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     environment:
@@ -13,9 +10,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    build:
-      context: ./FE
-      dockerfile: Dockerfile
+    image: ghcr.io/thanaiquynh/hex-to-rgb-converter-frontend:latest
     ports:
       - "3000:3000"
     environment:
