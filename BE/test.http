@@ -1,0 +1,102 @@
+### Health check
+GET http://localhost:8000/
+
+###
+
+### Convert hex to RGB - 6-character with #
+POST http://localhost:8000/convert
+Content-Type: application/json
+
+{
+  "hex": "#FF5733"
+}
+
+###
+
+### Convert hex to RGB - 6-character without #
+POST http://localhost:8000/convert
+Content-Type: application/json
+
+{
+  "hex": "00FF00"
+}
+
+###
+
+### Convert hex to RGB - 3-character with #
+POST http://localhost:8000/convert
+Content-Type: application/json
+
+{
+  "hex": "#FFF"
+}
+
+###
+
+### Convert hex to RGB - 3-character without #
+POST http://localhost:8000/convert
+Content-Type: application/json
+
+{
+  "hex": "F0F"
+}
+
+###
+
+### Convert hex to RGB - Black
+POST http://localhost:8000/convert
+Content-Type: application/json
+
+{
+  "hex": "#000000"
+}
+
+###
+
+### Convert hex to RGB - White
+POST http://localhost:8000/convert
+Content-Type: application/json
+
+{
+  "hex": "#FFFFFF"
+}
+
+###
+
+### Convert hex to RGB - Common color (Blue)
+POST http://localhost:8000/convert
+Content-Type: application/json
+
+{
+  "hex": "#0000FF"
+}
+
+###
+
+### Invalid hex - too long (should fail)
+POST http://localhost:8000/convert
+Content-Type: application/json
+
+{
+  "hex": "#FF5733AA"
+}
+
+###
+
+### Invalid hex - invalid characters (should fail)
+POST http://localhost:8000/convert
+Content-Type: application/json
+
+{
+  "hex": "#GGGGGG"
+}
+
+###
+
+### Invalid hex - too short (should fail)
+POST http://localhost:8000/convert
+Content-Type: application/json
+
+{
+  "hex": "#FF"
+}
