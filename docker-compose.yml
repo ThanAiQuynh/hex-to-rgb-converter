@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   backend:
-    # image: ghcr.io/thanaiquynh/hex-to-rgb-converter-backend:latest
+    image: ghcr.io/thanaiquynh/hex-to-rgb-converter-backend:latest
     build:
       context: ./BE
       dockerfile: Dockerfile
